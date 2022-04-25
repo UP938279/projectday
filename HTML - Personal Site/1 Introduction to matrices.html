@@ -1,0 +1,220 @@
+<!--hyperlink instead of radio button!-->
+<!--What can we do with martricds-->
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>What is a Matrix?</title>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+      }
+    });
+  </script>
+
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+
+<body>
+
+  <div class="navbar bg-dark" style=" position: sticky; margin right:0px;">
+
+    <!--  to make a different background colour for the nav bar, use style="background-color: #D77FA1; -->
+
+    <button id="welcome" class="btn btn-primary">
+      Welcome Page
+    </button>
+    <button id="addsubtractmatrices" class="btn btn-primary">
+      <a href="2 Adding and Subtracting Matrices.html" class="link"></a>
+      Adding or Subtracting Matrices
+    </button>
+    <button id="multiplymatrices" class="btn btn-primary">
+      Multiplying Matrices
+    </button>
+    <button id="determinant" class="btn btn-primary">
+      The Determinant and the Inverse
+    </button>
+    <button id="cramersrule" class="btn btn-primary">
+      Cramer's Rule
+    </button>
+    <button id="calculator2x2" class="btn btn-primary">
+      2 x 2 Matrix Calculator
+    </button>
+    <button id="calculator3x3" class="btn btn-primary">
+      3 x 3 Matrix Calculator
+    </button>
+    <button id="quiz" class="btn btn-primary">
+      Quiz Section
+    </button>
+    <button id="engineering" class="btn btn-primary">
+      Matrices in Engineering
+    </button>
+    <button id="circuitCalculator" class="btn btn-primary">
+      Circuit Calculator
+    </button>
+
+  </div>
+
+<div class="topics">
+
+  <h2 id="top">Topics on this page</h2>
+  <button class="btn btn-primary" onclick="topFunction()" class="topButton" id="topButton" style="position:fixed;bottom: 20px; right: 30px; display:none;">Return to the top of the page</button>
+
+<button class="btn btn-primary" id = "pagelink1">What is a Matrix?</button>
+<button class="btn btn-primary" id = "pagelink2">How do we Label Matrices?</button>
+<button class="btn btn-primary" id = "pagelink3">What can we do with a Matrix?</button>
+<button class="btn btn-primary"  id = "pagelink4">Special types of Matrix</button>
+
+</div>
+
+<div class="intro">
+
+  <h2 id=whatisamatrix>What is a Matrix?</h2>
+  <br>
+    A Matrix is a rectangular array of number or expressions. These numbers or expressions It will have <em>m</em> rows (that go across the page horizontally) and <em>n</em> columns (which go up and down, vertically).
+    These are the dimensions of the Matrix. This matrix below would be described as a 2 x 4 Matrix - it has 3 rows and 4 columns.
+    <br>
+  <h4 class="centre">A 2 x 4 Matrix</h4>
+  \begin{bmatrix} 1 & 2 & 3 & 4\\ 5&6&7&8\end{bmatrix}
+
+</div>
+  <br><br>
+
+  <h4 class="centre">A 2 x 2 Matrix</h4>
+  <p>\begin{bmatrix} 1 & 2\\ 3 & 4\end{bmatrix}
+  </p>
+
+
+  <h4>Square or Non-Square</h4>
+  <p>The difference between a Square or Non-Square Matrix is a very simple one. If the Matrix is Square, it has the same number of rows and columns. If the Matrix does not meet this criteria,
+    then it is a Non-Square Matrix. Look at the two examples above - there is one which is Square, and one Non-Square. Count the number of rows and columns.
+    <br><br>
+
+    If you thought that the 2 x 2 Matrix was square and the 3 x 4 Matrix was Non-Square, you were correct! The 2 x 2 Matrix has the same number of rows and columns, whereas the 3 x 4
+    Matrix does not.
+    <br><br>
+    Use the below quiz to test your knowledge.
+
+  </p>
+
+  <br><br>
+
+  <h4>Hover over the answer you think is correct</h4>
+
+  <p style="margin-top: 50px; margin-bottom: 10px;">
+    \begin{bmatrix} 1 & 2\\ 3 & 4\end{bmatrix}
+  </p>
+
+<div class="correct" style="text-align: center;">Square</div>
+
+<div class="msgCorrect" style="text-align: center;">That's correct! It is a SQUARE matrix</div>
+
+<div class= "notCorrect" style="text-align: center;">  Not Square</div>
+<div class= "msgNotCorrect" style="text-align: center;">That's incorrect. It is actually a SQUARE matrix</div>
+
+
+  <p style="margin-top: 50px; margin-bottom: 10px;">
+
+  \begin{bmatrix} 4&8&12\\ 3 & 4 & 3\end{bmatrix}
+      </p>
+
+      <div class="notCorrect" style="text-align: center;">Square</div>
+
+      <div class="msgNotCorrect" style="text-align: center;">That's incorrect. It is NOT a square matrix</div>
+
+      <div class= "correct" style="text-align: center;">  Not Square</div>
+      <div class= "msgCorrect" style="text-align: center;">That's correct! It is a NON-SQUARE matrix</div>
+
+
+
+
+  <p style="margin-top: 50px; margin-bottom: 10px;">
+  \begin{bmatrix} 7 & 4 & \omega\\ 0 & z & 9\end{bmatrix}  </p>
+  <p>
+
+    <div class="notCorrect" style="text-align: center;">Square</div>
+
+    <div class="msgNotCorrect" style="text-align: center;">That's incorrect. It is NOT a square matrix. <br>
+      Were you fooled by the use of symbols instead of numbers? It doesn't matter if you use symbols/letters or numbers - it's all to do with the rows and columns!</div>
+
+    <div class= "correct" style="text-align: center;">  Not Square</div>
+    <div class= "msgCorrect" style="text-align: center;">That's correct! It is a NON-SQUARE matrix</div>
+
+
+<p style="margin-top: 50px; margin-bottom: 10px;">\begin{bmatrix} 4&\theta&9&0&1\\ 0 & x & 9 & 4&4\\4&96&7&8&75\\32&7&9&2&\omega\\2&\pi&3&4&1\end{bmatrix}
+  </p>
+
+  <div class="correct" style="text-align: center;">Square</div>
+
+  <div class="msgCorrect" style="text-align: center;">That's correct! It is a SQUARE matrix</div>
+
+  <div class= "notCorrect" style="text-align: center;">  Not Square</div>
+  <div class= "msgNotCorrect" style="text-align: center;">That's incorrect. It is actually a SQUARE matrix</div>
+
+
+  <h2 id=howtolabelamatrix style="margin-top: 50px; margin-bottom: 10px;">How do we Label Matrices?</h2>
+  <p>
+    We label matrices with subscripts. We use the name of the Matrix (usually a letter), then a subscript of its position by row then column.
+    <br>
+  <h4 class="centre">Matrix A</h4>
+  \begin{bmatrix} a{_1}{_,}{_1} & a{_1}{_,}{_2}\\ a{_2}{_,}{_1} & a{_2}{_,}{_2}\end{bmatrix}
+  <br>
+  As you can see, the element in the first row and in the first column is labelled a<sub>1,1</sub>. Although it is not necessary to use a comma to separate the number of rows and columns,
+  it can be regarded as good practice. Often, it is not required due to the size of the Matrix; i.e. For most examinations testing your understanding of matrices, having 10 or more
+  columns or rows is not needed. However this may not be the case for all of your career - so it would be good to get into the habit early.
+  </p>
+
+
+
+  <h2 id=whatcanwedo>What can we do with a Matrix?</h2>
+  Matrices are commonly used to solve linear equations.
+
+  <br><br>
+
+
+  <h2 id=specialmatrices>Special types of Matrix</h2>
+  <p {text-align:left;}>
+  <h4>The Null Matrix</h4>
+  \begin{bmatrix} 0 & 0\\ 0 & 0\end{bmatrix}
+
+  The Null Matrix is where all values of the Matrix are zero. Multiplying by this Matrix by any other will result in a Matrix of zeroes.
+
+  </p>
+  <br><br>
+  <h4>The Identity Matrix</h4>
+  <h5>A.K.A. The Unit Matrix</h5>
+  The Identity Matrix is a <b>Square</b> Matrix with ones on the main diagonal and zeroes everywhere else. Whether the Matrix is 1 x 1, 2 x 2 or 100 x 100, it is easy to draw
+  and will consist only of ones and zeroes - and <b>MUST</b> be Square.
+  <br><br>
+  \begin{bmatrix} 1&0&0&0&0\\ 0 & 1 & 0 & 0&0\\0&0&1&0&0\\0&0&0&1&0\\0&0&0&0&1\end{bmatrix}
+  <br><br><br>
+  <h4>The Transposed Matrix</h4>
+  This Matrix has been flipped along its diagonal. The row and column indices are switched. This matrix is used denoted by \(A ^T\).
+  <p style="text-align: center;">
+
+  \(A\) = $\begin{bmatrix} 1 & 2 \\ 3 & 4\end{bmatrix}$
+
+
+  <br><br>
+
+  \(A ^T\) = $\begin{bmatrix} 1 & 3\\ 2 & 4\end{bmatrix}$
+
+</p>
+
+  <script src="JS\1 introduction to matrices.js"></script>
+  <!--links JavasScript to HTML-->
+</body>
+
+</html>

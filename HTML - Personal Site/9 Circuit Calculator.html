@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <!-- Look at the MDN for meta to elaborate on these things -->
+  <meta name="author" content"UP938279 Jonathan Webb">
+  <meta name="Cramer'sRule" content="This page gives a non-exhaustive list of applications of Matrices in Engineering.
+  This web page is written for the matrix learning Tool
+    written and developed to meet the requirements of the BEng Electronic Engineering Portsmouth University.
+    This website is to assist the teaching and calculation of matrices for students. It has been developed
+    by UP938279 Jonathan Webb.">
+  <title>UP938279 - Jon's Matrix Learning Tool</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+      }
+    });
+  </script>
+
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/styles.css">
+  <!--not working in chrome, unknown reason. Possibly as local not online-->
+</head>
+
+<body>
+  <div class="navbar bg-dark" >
+
+    <!--  to make a different background colour for the nav bar, use style="background-color: #D77FA1; -->
+
+    <button id="welcome" class="btn btn-primary">
+      Welcome Page
+    </button>
+    <button id="whatisamatrix" class="btn btn-primary">
+      <a href="1 Introduction to matrices.html" class="link"></a>
+      What is a Matrix?
+    </button>
+    <button id="addsubtractmatrices" class="btn btn-primary">
+      <a href="2 Adding and Subtracting Matrices.html" class="link"></a>
+      Adding or Subtracting Matrices
+    </button>
+    <button id="multiplymatrices" class="btn btn-primary">
+      Multiplying Matrices
+    </button>
+    <button id="determinant" class="btn btn-primary">
+      The Determinant and the Inverse
+    </button>
+    <button id="cramersrule" class="btn btn-primary">
+      Cramer's Rule
+    </button>
+    <button id="calculator2x2" class="btn btn-primary">
+      2 x 2 Matrix Calculator
+    </button>
+    <button id="calculator3x3" class="btn btn-primary">
+      3 x 3 Matrix Calculator
+    </button>
+    <button id="quiz" class="btn btn-primary">
+      Quiz Section
+    </button>
+    <button id="engineering" class="btn btn-primary">
+      Matrices in Engineering
+    </button>
+  </div>
+
+  <div class="topics">
+
+    <button class="btn btn-primary" onclick="topFunction()" class="topButton" id="topButton" style="position:fixed;bottom: 20px; right: 30px; display:none;">Return to the top of the page</button>
+
+  <button class="btn btn-primary" id="pagelink1"><img src="Matrix Website Images\Circuit Calculator Mesh Analysis One.png" alt="Mesh Analysis Calculator Circuit One" style="width:100px;height:88px;"></a></button>
+  <button class="btn btn-primary" id="pagelink2"><img src="Matrix Website Images\Circuit Calculator Mesh Analysis Two.png" alt="Mesh Analysis Calculator Circuit Two" style="width:100px;height:88px;"></a></button>
+  <button class="btn btn-primary" id="pagelink3"><img src="Matrix Website Images\Circuit Calculator Mesh Analysis Three.png" alt="Mesh Analysis Calculator Circuit Three" style="width:133px;height:88px;"></a></button>
+
+  </div>
+
+  <h2 id="top">Mesh Analysis Practice</h2>
+  <p>
+    This section is for you to analyse three configurations of circuit using Mesh Analysis.
+    You can calculate the circuits here and see how altering the values of each component affects the resultant loop circuits. Answers and methodology are provided for each circuit.
+  </p>
+
+  <div id="circuitOne" display="block" style="background-color: white;">
+    <h2 class="centre">Circuit One</h2>
+
+    <img src="Matrix Website Images\Circuit Calculator Mesh Analysis One.png" alt="Mesh Analysis Calculator Circuit One" style="width:495px;height:443px;">
+
+    <table id="circuitOneTable" class="matrixACSS">
+      <tbody>
+
+        <tr style="position: relative;  top: 370px;  left: 0px;">
+          <td>$E_1$</td>
+          <td><input class="smallerInput" type="number" name="circuitOneE1" id="circuitOneE1" value="1" /> V</td>
+        </tr>
+        <tr style="position: relative;  top: 350px;  left: 350px;">
+          <td>$E_2$</td>
+          <td><input class="smallerInput" type="number" name="circuitOneE1" id="circuitOneE2" value="1" /> V</td>
+        </tr>
+        <tr style="position: relative;  top: 40px;  left: 0px;">
+          <td>$R_1$</td>
+          <td><input class="smallerInput" type="number" name="circuitOneR1" id="circuitOneR1" value="1" /> $\Omega$</td>
+        </tr>
+        <tr style="position: relative;  bottom: 0px;  left: 560px;">
+          <td>$R_2$</td>
+          <td><input class="smallerInput" type="number" name="circuitOneR2" id="circuitOneR2" value="1" /> $\Omega$</td>
+        </tr>
+        <tr style="position: relative;  top: 80px;  left: 350px;">
+          <td>$R_3$</td>
+          <td><input class="smallerInput" type="number" name="circuitOneR3" id="circuitOneR3" value="1" /> $\Omega$</td>
+        </tr>
+
+      </tbody>
+    </table>
+    <br><br>
+
+    <table>
+      <tr>
+        <td><button type="button" class="btn btn-primary" id="circuitOneCalculateButton" style="display: block;">Calculate Circuit</button></td>
+        <td>&emsp; </td>
+        <td id="circuitOneAns"></td>
+      </tr>
+    </table>
+
+    <button type="button" class="btn btn-primary" class="steps" id="circuitOneWorkedSolutionButton" style="display: none;">Worked Solution</button>
+    <p id="circuitOneWorkedSolution" class="workedSolution" style="display: none;">
+    </p>
+
+  </div>
+
+  <div id="circuitTwo" display="block" style="background-color: white;">
+    <h2 class="centre">Circuit Two</h2>
+
+    <img src="Matrix Website Images\Circuit Calculator Mesh Analysis Two.png" alt="Mesh Analysis Calculator Circuit Two" style="width:495px;height:443px;">
+
+    <table id="circuitTwoTable" class="matrixACSS">
+      <tbody>
+
+        <tr style="position: relative;  top: 380px;  left: 0px;">
+          <td>$E_1$</td>
+          <td><input class="smallerInput" type="number" name="circuitTwoE1" id="circuitTwoE1" value="1" /> V</td>
+        </tr>
+        <tr style="position: relative;  top: 330px;  left: 570px;">
+          <td>$E_2$</td>
+          <td><input class="smallerInput" type="number" name="circuitTwoE1" id="circuitTwoE2" value="1" /> V</td>
+        </tr>
+        <tr style="position: relative;  top: 40px;  left: 0px;">
+          <td>$R_1$</td>
+          <td><input class="smallerInput" type="number" name="circuitTwoR1" id="circuitTwoR1" value="1" /> $\Omega$</td>
+        </tr>
+        <tr style="position: relative;  bottom: 0px;  left: 570px;">
+          <td>$R_2$</td>
+          <td><input class="smallerInput" type="number" name="circuitTwoR2" id="circuitTwoR2" value="1" /> $\Omega$</td>
+        </tr>
+        <tr style="position: relative;  top: 78px;  left: 350px;">
+          <td>$R_3$</td>
+          <td><input class="smallerInput" type="number" name="circuitTwoR3" id="circuitTwoR3" value="1" /> $\Omega$</td>
+        </tr>
+
+      </tbody>
+    </table>
+    <br><br><br><br>
+
+    <table>
+      <tr>
+        <td><button type="button" class="btn btn-primary" id="circuitTwoCalculateButton" style="display: block;">Calculate Circuit</button></td>
+        <td>&emsp; </td>
+        <td id="circuitTwoAns" ></td>
+      </tr>
+    </table>
+
+    <button type="button" class="btn btn-primary" class="steps" id="circuitTwoWorkedSolutionButton" style="display: none;">Worked Solution</button>
+    <p id="circuitTwoWorkedSolution" class="workedSolution" style="display: none;">
+    </p>
+
+  </div>
+
+  <div id="circuitThree" display="block" style="background-color: white;">
+    <h2 class="centre">Circuit Three</h2>
+
+    <img src="Matrix Website Images\Circuit Calculator Mesh Analysis Three.png" alt="Mesh Analysis Calculator Circuit Three" style="width:467px;height:297px;">
+
+    <table id="circuitThreeTable" class="matrixACSS">
+      <tbody>
+
+        <tr style="position: relative;  top: 230px;  left: 20px;">
+          <td>$E_1$</td>
+          <td><input class="smallerInput" type="number" name="circuitThreeE1" id="circuitThreeE1" value="1" /> V</td>
+        </tr>
+          <tr style="position: relative;  bottom: 30px;  left: 290px;">
+          <td>$R_1$</td>
+          <td><input class="smallerInput" type="number" name="circuitThreeR1" id="circuitThreeR1" value="1" /> $\Omega$</td>
+        </tr>
+        <tr style="position: relative; top: 55px;  left: 150px;">
+          <td  style="color:	#FF0000">$R_2$</td>
+          <td><input class="smallerInput" type="number" name="circuitThreeR2" id="circuitThreeR2" value="1"/> $\color{#FF0000}{\Omega}$</td>
+        </tr>
+        <tr style="position: relative;  top: 25px;  left: 410px;">
+          <td  style="color:	#FF0000">$R_3$</td>
+          <td><input class="smallerInput" type="number" name="circuitThreeR3" id="circuitThreeR3" value="1"/> $\color{#FF0000}{\Omega}$</td>
+        </tr>
+        <tr style="position: relative;  top: 155px;  left: 250px;">
+          <td>$R_4$</td>
+          <td><input class="smallerInput" type="number" name="circuitThreeR4" id="circuitThreeR4" value="1" /> $\Omega$</td>
+        </tr>
+        <tr style="position: relative;  top: 75px;  left: 550px;">
+          <td>$R_5$</td>
+          <td><input class="smallerInput" type="number" name="circuitThreeR5" id="circuitThreeR5" value="1" /> $\Omega$</td>
+        </tr>
+
+      </tbody>
+    </table>
+    <br><br><br><br>
+
+    <table>
+      <tr>
+        <td><button type="button" class="btn btn-primary" id="circuitThreeCalculateButton" style="display: block;">Calculate Circuit</button></td>
+        <td>&emsp; </td>
+        <td id="circuitThreeAns" ></td>
+      </tr>
+    </table>
+
+    <button type="button" class="btn btn-primary" class="steps" id="circuitThreeWorkedSolutionButton" style="display: none;">Worked Solution</button>
+    <p id="circuitThreeWorkedSolution" class="workedSolution" style="display: none;">
+    </p>
+
+  </div>
+
+
+  <script src="JS\9 Circuit Calculator.js"></script>
+</body>
+
+</html>

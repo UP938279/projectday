@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <!-- Look at the MDN for meta to elaborate on these things -->
+  <meta name="author" content"UP938279 Jonathan Webb">
+  <meta name="Cramer'sRule" content="This page gives a non-exhaustive list of applications of Matrices in Engineering.
+  This web page is written for the matrix learning Tool
+    written and developed to meet the requirements of the BEng Electronic Engineering Portsmouth University.
+    This website is to assist the teaching and calculation of matrices for students. It has been developed
+    by UP938279 Jonathan Webb.">
+  <title>UP938279 - Jon's Matrix Learning Tool</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+      }
+    });
+  </script>
+
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/styles.css">
+  <!--not working in chrome, unknown reason. Possibly as local not online-->
+</head>
+
+<body>
+  <div class="navbar bg-dark" >
+
+
+    <!--  to make a different background colour for the nav bar, use style="background-color: #D77FA1; -->
+
+    <button id="welcome" class="btn btn-primary">
+      Welcome Page
+    </button>
+    <button id="whatisamatrix" class="btn btn-primary">
+      What is a Matrix?
+    </button>
+    <button id="addsubtractmatrices" class="btn btn-primary">
+      Adding or Subtracting Matrices
+    </button>
+    <button id="multiplymatrices" class="btn btn-primary">
+      Multiplying Matrices
+    </button>
+    <button id="determinant" class="btn btn-primary">
+      The Determinant and the Inverse
+    </button>
+    <button id="cramersrule" class="btn btn-primary">
+      Cramer's Rule
+    </button>
+    <button id="calculator2x2" class="btn btn-primary">
+      2 x 2 Matrix Calculator
+    </button>
+    <button id="calculator3x3" class="btn btn-primary">
+      3 x 3 Matrix Calculator
+    </button>
+    <button id="quiz" class="btn btn-primary">
+      Quiz Section
+    </button>
+    <button id="circuitCalculator" class="btn btn-primary">
+      Circuit Calculator
+    </button>
+
+  </div>
+
+  <div class="topics">
+
+    <h2 id="top">Topics on this page</h2>
+    <button class="btn btn-primary" onclick="topFunction()" class="topButton" id="topButton" style="position:fixed;bottom: 20px; right: 30px; display:none;">Return to the top of the page</button>
+
+  <button class="btn btn-primary" id="pagelink1" >Mesh Analysis method</button>
+  <button class="btn btn-primary" id="pagelink2" >A worked example</button>
+  <button class="btn btn-primary" id="pagelink3" >The General Formula</button>
+  </div>
+
+  <p>
+    This section assumes a solid understanding of Kirchhoff's Voltage Law, also known as KVL, (The sum of voltages around a loop is zero).
+
+  </p>
+
+  <h2 id="method">Mesh Analysis</h2>
+  <p>
+    Mesh analysis is used to calculate currents when they are flowing in loops of a circuit. There are 4 steps to follow.
+  <ol>
+    <li>Assign a current in a clockwise direction for each loop.
+      <br>N.B. Current could be assigned counter-clockwise instead of clockwise. As long as the direction used is consistent across the circuit, there will be no issues -
+      it is just most conventional to go clockwise.
+    </li>
+    <li>Indicate the polarity of voltage across each component, considering the direction of the current.</li>
+    <li>Apply KVL for each loop. The polarity of voltage sources will not be affected by the direction of assigned currents - they stay as designated originally.</li>
+    <li>Solve the resultant simultaneous equations for the loop currents.</li>
+  </ol>
+
+  </p>
+
+
+  <p id="meshAnalysisExample" class="centre">
+    <img src="Matrix Website Images\Mesh Analysis Example One.png" alt="Mesh Analysis Circuit One" style="width:825px;height:738px;">
+
+    <br><br>
+  <table class="centre">
+    <tr>
+      <th>Loop One</th>
+      <th>&emsp;&emsp;&emsp;&emsp;</th>
+      <th>Loop Two</th>
+    </tr>
+    <tr>
+      <td>$+ E{_1} - V{_1} - V{_3} = 0$</td>
+      <td>&nbsp;</td>
+      <td>$- V{_3} - V{_2} + E{_2} = 0$</td>
+    </tr>
+    <tr>
+      <td>$2 - 2I{_1} - 4(I{_1} - I{_2}) = 0$</td>
+      <td>&nbsp;</td>
+      <td>$-6(I{_2}-I{_1}) - I{_2} - 6= 0$</td>
+    </tr>
+    <tr>
+      <td>$- 6I{_1} + 4I{_2} = -2$</td>
+      <td>&nbsp;</td>
+      <td>$4I{_1} - 5I{_2} = 6$</td>
+    </tr>
+    <tr height=20px></tr>
+      <tr>
+      <td colspan="3">  With some simple equation manipulation (not shown here - you can do it yourself!) it is possible to get the answer:</td>
+      </tr>
+      <tr height=20px></tr>
+    <tr>
+      <td> $I{_1} = -1A$</td>
+      <td>&nbsp;</td>
+      <td> $I{_2} = -2A$</td>
+    </tr>
+  </table>
+
+  <br><br>
+  <div id="generalFormula">
+  This equation was simple. If you have more variables however, your ability to solve simultaneous equations with matrices can save a lot of time and make things much easier.
+  <br>For a connected network containing <em>b</em> branches and <em>n</em> nodes, there will be $l = b - n +1$ equations of the form:
+  <table>
+    <tr>
+      <td><br>$e_1^0 = R_{11}i_1 + R_{12}i_2 + \dots + R_{1l}i_l$
+        <br>$e_2^0 = R_{21}i_1 + R_{22}i_2 + \dots + R_{2l}i_l$
+        <br>$\dots &emsp;\dots &emsp;\dots &emsp;\dots &emsp;\dots &emsp;\dots$
+        <br>$e_l^0 = R_{l1}i_1 + R_{l2}i_2 + \dots + R_{ll}i_l$
+      </td>
+      <td>&nbsp;</td>
+      <td>OR</td>
+      <td>&nbsp;</td>
+      <td>$\begin{bmatrix} e_1^0 \\e_2^0 \\ \vdots \\e_l^0 \end{bmatrix} = \begin{bmatrix}R_{11} & \dots & R_{1l} \\ R_{21} & \dots & R_{2l} \\ \dots & \dots & \dots \\ R_{l1} & \dots & R_{ll}\end{bmatrix}
+        \begin{bmatrix}i_{1} \\ i_{2} \\ \vdots \\ i_{l}\end{bmatrix}$</td>
+    </tr>
+  </table>
+<br>
+  Where: <table>
+    <tr>
+      <td> $e_1^0 =$ the net source voltage tending to force current in the reference direction around loop $k$</td>
+    </tr>
+    <tr>
+      <td>$R_{il} =$ total series resistance in loop $i$</td>
+    </tr>
+    <tr>
+      <td> $R_{ij} =$ total series resistance "shared" by loops $i$ and $j$ $(= R_{ji})$</td>
+    </tr>
+  </table>
+
+
+  </p>
+  </div>
+  <p>
+    If you are faced with a scenario where you have a <em>current</em> source, use NODAL analysis instead. Although the method for Nodal Analysis is not covered here,
+    it is still possible to use Cramer's Rule to assist your calculations.
+  </p>
+
+  <!-- <h2>Nodal Analysis</h2>
+<p>
+
+</p> -->
+
+  <script src="JS\6 Applying Matrices to Engineering.js"></script>
+</body>
+
+</html>

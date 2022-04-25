@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <!-- Look at the MDN for meta to elaborate on these things -->
+  <meta name="author" content"UP938279 Jonathan Webb">
+  <meta name="description" content="This web page is the initial landing page for the matrix learning Tool
+    written and developed to meet the requirements of the BEng Electronic Engineering Portsmouth University.
+    This web page is to assist the teaching and calculation of matrices for students. It has been developed
+    by UP938279 Jonathan Webb">
+  <!-- <img src="Matrix Website Images/IMG_4322.JPG" alt="Jon Climbing" height="50"> -->
+  <!-- insert a picture of a matrix here possibly? -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <title>UP938279 - Jon's Matrix Learning Tool</title>
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="favicon.ico">
+  <!--not working in chrome, unknown reason. Possibly as local not online-->
+</head>
+
+<body>
+<div class="navbar bg-dark" >
+    <!--  to make a different background colour for the nav bar, use style="background-color: #D77FA1; -->
+
+    <button id="whatisamatrix" class="btn btn-primary">
+      What is a Matrix?
+    </button>
+    <button id="addsubtractmatrices" class="btn btn-primary">
+        Adding or Subtracting Matrices
+    </button>
+    <button id="multiplymatrices" class="btn btn-primary">
+      Multiplying Matrices
+    </button>
+    <button id="determinant" class="btn btn-primary">
+      The Determinant and the Inverse
+    </button>
+    <button id="cramersrule" class="btn btn-primary">
+      Cramer's Rule
+    </button>
+    <button id="calculator2x2" class="btn btn-primary">
+      2 x 2 Matrix Calculator
+    </button>
+    <button id="calculator3x3" class="btn btn-primary">
+      3 x 3 Matrix Calculator
+    </button>
+    <button id="quiz" class="btn btn-primary">
+      Quiz Section
+    </button>
+    <button id="engineering" class="btn btn-primary">
+      Matrices in Engineering
+    </button>
+    <button id="circuitCalculator" class="btn btn-primary">
+      Circuit Calculator
+    </button>
+
+  </div>
+  <div id="top" class="topics">
+  <button class="btn btn-primary" onclick="topFunction()" class="topButton" id="topButton" style="position:fixed;bottom: 20px; right: 30px; display:none;">Return to the top of the page</button>
+  </div>
+
+  <h1>Welcome</h1>
+  <p>
+    This website is designed to help you learn matrices. It is not a true standalone tool - it is to assist with other forms of teaching.
+    It is recommended that you start with what a matrix is, before moving on to adding or subtracting matrices. The contents list below suggests
+    in what order you should visit the pages of this website.
+  </p>
+  <p>
+    If you are feeling confident in your knowledge, perhaps you would like to test it - use the quiz feature.
+  </p>
+
+  <br>
+
+
+  <h5>Contents</h5>
+
+  <ol>
+
+      <button class="btn btn-primary" id="whatisamatrix2">What is a matrix?</a></button>
+    <p>
+      An introduction to matrices, covering what they are and how we describe them.
+    </p>
+
+    <button class="btn btn-primary" id="addsubtractmatrices2">Adding or Subtracting Matrices</a></button>
+    <p>
+      How to add together or subtract from matrices - something to start you off easy!
+    </p>
+
+    <button class="btn btn-primary" id="multiplymatrices2">Multiplying Matrices</a></button>
+    <p>
+      How to multiply a matrix with another, and why A x B is not the same as B x A.
+    </p>
+
+    <button class="btn btn-primary" id="determinant2">The Determinant and the Inverse</a></button>
+    <p>
+      What the determinant and the inverse are, how to calculate them, and why they matter.
+    </p>
+
+    <button class="btn btn-primary" id="cramersrule2">Cramer's Rule</a></button>
+    <p>
+      Here, we describe what Cramer's rule is and how it can be used.
+    </p>
+
+    <button class="btn btn-primary" id="calculator2x22">2 x 2 Matrix Calculator</a></button>
+    <p>
+      A Calculator covering all the areas of 2 x 2 matrices covered on this website. This Calculator also shows step-by-step methodology.
+    </p>
+
+    <button class="btn btn-primary" id="calculator3x32">3 x 3 Matrix Calculator</a></button>
+    <p>
+      A Calculator covering all the areas of 3 x 3 matrices covered on this website. This Calculator also shows step-by-step methodology.
+    </p>
+
+    <button class="btn btn-primary" id="quiz2">Quiz Section</a></button>
+    <p>
+      Test your ability to calculate matrices.
+    </p>
+
+    <button class="btn btn-primary" id="engineering2">Matrices in Engineering</a></button>
+    <p>
+      Some examples of how matrices are used in engineering - including worked examples.
+    </p>
+
+    <button class="btn btn-primary" id="circuitCalculator2">Circuit Calculator</a></button>
+    <p>
+      Use this page to calculate a limited range of circuits using Mesh Analysis. This will give you an opportunity to see worked examples
+      of Mesh Analysis, as shown in the Matrices in Engineering section.
+    </p>
+
+  <hr size="5">
+
+  <button class="btn btn-primary" id="contactCreator">Contact the creator of this website</a></button>
+  <p>
+    <!-- <p>  </p> is a paragraph tab -->
+    <em>This is the dissertation project of <strong>UP938279</strong>. It is supervised by <a href="https://www.port.ac.uk/about-us/structure-and-governance/our-people/our-staff/john-geddes">Dr John Geddes</a>
+      of the University of Portsmouth.</em>
+  </p>
+
+<script src="JS\index.js"></script> <!--links JavasScript to HTML-->
+</body>
+
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <!-- Look at the MDN for meta to elaborate on these things -->
+  <meta name="author" content"UP938279 Jonathan Webb">
+  <meta name="description" content="This page gives tuition on how to multiply matrices.
+  This web page is written for the matrix learning Tool
+    written and developed to meet the requirements of the BEng Electronic Engineering Portsmouth University.
+    This website is to assist the teaching and calculation of matrices for students. It has been developed
+    by UP938279 Jonathan Webb.">
+
+  <title>UP938279 - Jon's Matrix Learning Tool</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+      }
+    });
+  </script>
+
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+  <!-- <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> -->
+  <!-- By using this version of mathjax, inline math works; unable to make it work and display otherwise, would only work with
+  equation mode - don't want everything on the same line -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="favicon.ico">
+  <!--not working in chrome, unknown reason. Possibly as local not online-->
+</head>
+
+<body>
+<div class="navbar bg-dark" >
+
+    <!--  to make a different background colour for the nav bar, use style="background-color: #D77FA1; -->
+
+    <button id="welcome" class="btn btn-primary">
+      Welcome Page
+    </button>
+    <button id="whatisamatrix" class="btn btn-primary">
+      <a href="1 Introduction to matrices.html" class="link"></a>
+      What is a Matrix?
+    </button>
+    <button id="addsubtractmatrices" class="btn btn-primary">
+      <a href="2 Adding and Subtracting Matrices.html" class="link"></a>
+      Adding or Subtracting Matrices
+    </button>
+    <button id="determinant" class="btn btn-primary">
+      The Determinant and the Inverse
+    </button>
+
+
+    <button id="cramersrule" class="btn btn-primary">
+      Cramer's Rule
+    </button>
+    <button id="calculator2x2" class="btn btn-primary">
+      2 x 2 Matrix Calculator
+    </button>
+    <button id="calculator3x3" class="btn btn-primary">
+      3 x 3 Matrix Calculator
+    </button>
+    <button id="quiz" class="btn btn-primary">
+      Quiz Section
+    </button>
+    <button id="engineering" class="btn btn-primary">
+      Matrices in Engineering
+    </button>
+    <button id="circuitCalculator" class="btn btn-primary">
+      Circuit Calculator
+    </button>
+
+  </div>
+
+<div class="topics">
+  <h2 id="top">Topics on this page</h2>
+  <button class="btn btn-primary" onclick="topFunction()" class="topButton" id="topButton" style="position:fixed;bottom: 20px; right: 30px; display:none;">Return to the top of the page</button>
+
+<button class="btn btn-primary" style="font-size:12px;" id="pagelink1">How to Multiply a Matrix with a Scalar</a></button>
+<button class="btn btn-primary" style="font-size:12px;" id="pagelink2">How to Multiply a Matrix with Another Matrix</a></button>
+<button class="btn btn-primary" style="font-size:12px;" id="pagelink3">A Worked Example of How to Multiply a Matrix with Another Matrix</a></button>
+<button class="btn btn-primary" style="font-size:12px;" id="pagelink4">A x B ≠ B x A - Why it matters which Matrix is A and which is B</a></button>
+
+</div>
+
+  <div class="multiplyByScalarDescription">
+    <h2 id=multiplybyscalar class="anchor">How to Multiply by a Scalar</h2>
+    <p>
+      A matrix can be multiplied by a scalar, $\lambda$ (real number). You do this by multiplying every element by $\lambda$. The final matrix has the same dimensions as the original matrix.
+      <br><br>
+
+      i.e. $ A=
+
+      \begin{bmatrix} a& b\\ c & d\end{bmatrix}$
+
+      <span style="display:inline-block; width: 100px;"></span>$\lambda A =$
+
+      $\begin{bmatrix} \lambda\cdot a& \lambda\cdot b\\ \lambda\cdot c & \lambda\cdot d\end{bmatrix}$
+
+      <br>
+      <br>
+
+      <span style="display:inline-block; width: 125px;"></span>$nA^T = (nA)^T$
+    </p>
+  </div>
+
+
+  <div class="multiplyByMatrixDescription">
+    <h2 id=multiplybymatrix class="anchor">How to Multiply with Another Matrix</h2>
+    <p>
+      For the matrix $AB$ to exist, the number of columns ($n$) in Matrix $A$ must be equal to the number of rows ($m$) in Matrix $B$.
+      This will give a matrix with dimensions $m$ x $l$.
+    </p>
+
+    <br><br>
+    <table>
+      <thead>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            $A$
+          </td>
+          <td class="multiplyTable">
+            x
+          </td>
+          <td>
+            $B$
+          </td>
+          <td class="multiplyTable">
+            =
+          </td>
+          <td>
+            $AB$
+          </td>
+        </tr>
+
+        <tr>
+          <td>$\uparrow$</td>
+          <td></td>
+          <td>$\uparrow$</td>
+          <td></td>
+          <td>$\uparrow$</td>
+        </tr>
+
+        <tr>
+          <td>$m$ x $n$</td>
+          <td></td>
+          <td>$n$ x $l$</td>
+          <td></td>
+          <td>$m$ x $l$</td>
+        </tr>
+      </tbody>
+    </table>
+    <br><br>
+    <p>
+      Calculate the dot product of the first row of the first matrix by the corresponding member of the first column of the second matrix
+      i.e. $a{_1}{_,}{_1}$ x $b{_1}{_,}{_1}$ + $a{_1}{_,}{_2}$ x $b{_2}{_,}{_1}$ (for a 2-rowed matrix $a$ and a 2-columned matrix $b$).
+      <br>
+      This will give you the element of the first row and first column of your new matrix; element $a{_1}{_,}{_1}$.
+      <br>
+      You then do this for the first row with the second column, this will give you the element for the first row, second column; $a{_1}{_,}{_2}$.
+      <br>You continue doing this until all of the columns are complete. Then you move to the second row - this will give you the second row for your resultant matrix.
+    </p>
+  </div>
+  <br>
+  <br>
+
+<h3 id=example3x3Multiply class="anchor">An example</h3>
+  <p>
+
+    Let's do an example with numbers, to try and make things clearer.
+    <br>
+
+    Let Matrix $A = &ensp;&ensp;&ensp;\begin{bmatrix} 3 & 1 & 4\\5 & 2 & -2\end{bmatrix}$
+    <br><br>
+    Let Matrix $B = &ensp;&ensp;&ensp;\begin{bmatrix} 1 & -1\\2 & 0\\-6 & 4\end{bmatrix}$
+    <br><br>
+    As the number of rows for matrix $A$ is equal to the number of columns of matrix $B$, we can multiply these two matrices!
+    <br>Let's examine how each box is calculated.
+    <br><br>
+    Matrix $AB = \begin{bmatrix} (3\cdot1 + 1\cdot2 + 4\cdot(-6)) & (3\cdot(-1) + 1\cdot0 + 4\cdot4)
+    \\(5\cdot1+ 2\cdot2 +(-2)\cdot(-6)) & (5\cdot(-1)+ 2\cdot0 +(-2)\cdot4)\end{bmatrix}$
+    <br><br>
+    Matrix $AB = \begin{bmatrix} -19 & 13\\21 & -13\end{bmatrix}$
+  </p>
+
+  <div class="AxBdoesnotequalBxADescription">
+    <h2 id=axBdoesnotequalBxA class="anchor">A x B ≠ B x A</h2>
+    <p>
+      It is <em>vital</em> to note that multiplying A x B does not equal B x A. Because of the way that it is calculated, the resultant
+      matrix will <i>likely</i> be different. Depending upon what numbers are in each matrix, it may be possible to get the same resultant
+      matrix - but it relies on luck. Ensure when multiplying matrices that you multiply them in the way that you want - the commutative
+      property of multiplication does not apply to matrices.
+    </p>
+
+  </div>
+
+
+
+  <script src="JS\3 Multiplying Matrices.js"></script>
+</body>
+
+</html>

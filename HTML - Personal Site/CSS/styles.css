@@ -1,0 +1,139 @@
+/* class identified by    .classname -->*/
+
+.smallerInput  {
+  width: 3em;
+}
+
+table {
+  border: 2px;
+}
+
+a:link { text-decoration: none;}
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:active { text-decoration: none; }
+
+
+.msgCorrect {
+  display: none;
+  text-align: center;
+}
+.msgNotCorrect {
+  display: none;
+  text-align: center;
+}
+.correct:hover + .msgCorrect {
+  display: block;
+  color: green;
+}
+.notCorrect:hover + .msgNotCorrect {
+  display: block;
+  color: red;
+}
+
+.centre {
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+}
+
+.answers{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.matrixACSS {  margin-left: 25%;
+  margin-right: auto;
+  float: left;
+}
+
+.matrixBCSS {  margin-left: auto;
+  margin-right: 25%;
+
+}
+
+.multiplyTable {padding-right: 30px;}
+
+
+.calcbuttons2x2 {
+  background-color: red;
+  padding: 0;
+  border: 0;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.calcbuttons3x3 {
+  background-color: red;
+  padding: 0;
+  border: 0;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  /* min-width: 100px; */
+}
+
+.calcbuttonsrow1 {
+width: 80px;
+}
+
+.hrstyle {
+  border-style: none;
+  border-top-style: dotted;
+  color: #2C2B9C;
+  border-width: 100px;
+  width:10%;
+}
+
+.link{
+color: #EEEEEE
+ }
+
+ .link:hover{
+color: #DA1212
+
+  }
+
+  .matrices{
+  width:30%;
+  text-align: center;
+  }
+
+.btn{
+  /*puts all in one line when in an average (15.6 inch) or larger screen*/
+  margin:10px 1px 10px 1px;
+  padding:10px;
+}
+
+body{
+  background-color: #F6F2D4;
+  margin: 0;
+}
+
+h1{
+  color: #2C2B9C;
+  margin-top:0;
+}
+
+
+
+/* hr{
+  border-style: none;
+  border-top-style: dotted;
+  border-color: #2C2B9C;
+  border-width: 5px;
+} */
+
+img{
+height:200px;
+}
+
+
+div{
+  margin: 0;
+}
+
+/* button{
+  margin: 20px 20px 20px 20px;
+} */
